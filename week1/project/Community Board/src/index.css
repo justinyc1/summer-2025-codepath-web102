@@ -4,10 +4,11 @@ td {
     border-width: 1px;
     border-radius: 10px;
     padding: 0px 0px 20px 0px;
+    margin-bottom: 20px;
 }
 
 img {
-    max-width: 400px;
+    width: 400px;
     height: 300px;
     object-fit: cover;
     border-top-left-radius: 10px;
@@ -15,7 +16,39 @@ img {
 }
 
 table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     border-spacing: 20px;
+}
+
+
+@media (max-width: 1280px) {
+    td {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 0px 10px 20px 10px;
+    }
+    img {
+        max-width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+@media (max-width: 640px) {
+    td {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    img {
+        max-width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
 }
 
 button {

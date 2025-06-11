@@ -22,8 +22,8 @@ The following **optional** features are implemented:
 
 - [x] Buttons or links to a related resources are on each card component
   - [x] All cards have buttons or links in addition to text
-- [ ] The site is responsive for both desktop and mobile formats
-  - [ ] Web app is shown in a mobile format
+- [x] The site is responsive for both desktop and mobile formats
+  - [x] Web app is shown in a mobile format
 
 The following **additional** features are implemented:
 
