@@ -1,0 +1,55 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.card {
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+  margin: 10px 0px;
+}
+
+.card.flipped {
+  transform: rotateX(180deg);
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: rotateX(180deg);
+}
+
+.next-btn {
+  background-color: black;
+  color: white;
+}
+
+.green {
+  background: rgb(202, 245, 222);
+} 
+
+.yellow {
+  background: rgb(243, 245, 202);
+} 
+
+.red {
+  background: rgb(245, 202, 202);
+} 
+
+img {
+  max-width: 200px;
+}
