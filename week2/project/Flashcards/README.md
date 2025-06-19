@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://s5.ezgif.com/tmp/ezgif-54522fc2fb6bf9.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='public/week2project.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Ezgif 
 
