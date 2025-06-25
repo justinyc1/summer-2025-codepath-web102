@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://s7.ezgif.com/tmp/ezgif-71d4029e21e636.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='public/week1project.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Ezgif.com
