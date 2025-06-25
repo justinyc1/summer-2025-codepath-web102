@@ -4,7 +4,7 @@ Submitted by: **Justin Chen**
 
 This web app: **Geography Flashcards Part 2 is an expanded version of Geography Flashcards with more features.**
 
-Time spent: **2** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Required Features
 
