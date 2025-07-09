@@ -1,0 +1,30 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8%;
+}
+
+.left {
+  background-color: red;
+  width: 350px;
+  height: 98vh;
+  min-height: 800px;
+}
+
+.center {
+  background-color: green;
+  width: 40%;
+  height: 98vh;
+  min-width: 300px;
+  min-height: 800px;
+}
+
+.right {
+  background-color: blue;
+  width: 350px;
+  height: 98vh;
+  min-height: 800px;
+}
