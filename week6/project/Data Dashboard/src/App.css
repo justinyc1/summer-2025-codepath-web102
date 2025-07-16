@@ -1,10 +1,110 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  background-color: rgb(36, 36, 36);
+  color: white;
+  min-height: 100vh;
 }
 
-.table-body-title {
-  /* text-align: left; */
+html, body, h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header h1 {
+  padding-top: 5%;
+  padding-bottom: 2%;
+  font-size: 40px;
+}
+
+.buttons-container {
+  margin: 10px 0px;
+}
+
+.buttons-container span {
+  font-size: 20px;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 16px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.btn.active {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+
+.content .freq {
+  font-size: 20px;
+}
+
+.freq {
+  margin: 30px;
+  font-weight: normal;
+}
+
+.freq .body {
+  background-color: rgb(48, 48, 48);
+  margin: 4px;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.filter-container {
+  font-size: 18px;
+}
+
+.user-input {
+  margin: 6px;
+  font-size: 18px;
+}
+
+label {
+  margin: 5px;
+}
+
+table {
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 50px;
+}
+
+th {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+td {
+  font-size: 18px;
+}
+
+th.date {
+  width: 8%;
+}
+
+th.title {
+  width: 25%;
+}
+
+th.abstract {
+  width: 52%;
+}
+
+th.authors {
+  width: 15%;
+}
+
+th, td {
+  padding: 15px;
 }

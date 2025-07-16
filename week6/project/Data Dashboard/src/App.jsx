@@ -15,8 +15,8 @@ function App() {
   const sections = ["home", "us", "world", "arts", "science"];
   const [section, setSection] = useState(sections[0]);
   const [data, setData] = useState(null);
-  const [date, setDate] = useState("");
-
+  const [userInput, setUserInput] = useState("");
+  const [radioButton, setRadioButton] = useState("title");
 
   const fetchData = async (section) => {
     try {
@@ -38,14 +38,25 @@ function App() {
 
   useEffect(() => {
     fetchData(section);
-    updateDate();
   }, [section]);
 
-  const updateDate = () => { 
-    const today = new Date();
-    const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-    const formattedDate = today.toLocaleDateString('en-US', options);
-    setDate(formattedDate);
+  const getDateTime = (dateString, hour, partAfterHour) => {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const month = months[dateString.substring(5, 7)-1];
+    const day = dateString.substring(8, 10);
+    const date = month + " " + day;
+    // example hour = 09
+    // example partAfterHour = :42:16
+    hour = Number(hour);
+    if (hour === 0) {
+      return date + ", " + "12" + partAfterHour +" AM";
+    } else if (hour > 0 && hour < 12) {
+      return date + ", " + Number(hour) + partAfterHour +" AM";
+    } else if (hour === 12) {
+      return date + ", " + hour + partAfterHour + " PM";
+    } else { // hour > 12
+      return date + ", " + (hour % 12) + partAfterHour + " PM";
+    }
   }
 
   const getWordFreq = (resultSection) => {
@@ -66,7 +77,7 @@ function App() {
   }
 
   const getNMostFreq = (freq, n) => {
-    const commonWords = ["the", "of", "for", "in", "to", "a", "by", "and", "is", "at", "what", "after", "say", "on", "new", "know", "it","up", "would", "has", "about", "here", "we", "i", "when", "are", "says", "another", "with", "his", "more", "you", "will", "he", "she", "her", "his", "him", "from", "an", "who", "can", "how", "this", "no", "not", ]
+    const commonWords = ["just", "found", "the", "of", "for", "in", "to", "a", "by", "and", "is", "at", "what", "after", "say", "on", "new", "know", "it","up", "would", "has", "about", "here", "we", "i", "when", "are", "says", "another", "with", "his", "more", "you", "will", "he", "she", "her", "his", "him", "from", "an", "who", "can", "how", "this", "no", "not", ]
     // remove words that appeared once or is common
     for (const word in freq) {
       if (freq[word] === 1 || commonWords.includes(word)) {
@@ -84,11 +95,11 @@ function App() {
   } 
 
   return (
-    <div>
+    <div className='page-container'>
       <div className='header'>
-        <h1>News for {date}</h1>
+        <h1>Top {data === null ? "" : data.results.length + " "}NYT news articles, as of {data === null ? "..." : getDateTime(data.last_updated.substring(0, 10), data.last_updated.substring(11, 13), data.last_updated.substring(13, 19))}</h1>
         <div className='buttons-container'>
-          <span>section: </span>
+          <span>Section: </span>
           {sections.map((name, idx) => (
             <button
               key={name}
@@ -98,33 +109,80 @@ function App() {
               {name === "us" ? "U.S." : name.charAt(0).toUpperCase() + name.slice(1)}
             </button>
           ))
-
           }
         </div>
       </div>
       <div className='content'>
-        <h4>Top {data === null ? "" : data.results.length + " "}stories of the day:</h4>
-        <p>Top 10 most frequent words in titles: {data === null ? "" : getNMostFreq(getWordFreq("title"), 10).map(({ word }) => (
-          <span key={word}>{word} </span>
-        ))}</p>
+        <div className='freq'>
+          <span className='head'>Most frequent words in titles: </span>
+          {data === null ? "" : getNMostFreq(getWordFreq("title"), 10).map(({ word }) => (
+            <span className='body' key={word}>{word}</span>
+          ))}
+        </div>
+        <div className='filter-container'>
+          <span>Filter for a specific keyword: </span>
+          <input
+            className='user-input'
+            value={userInput}
+            onChange={(e) => (setUserInput(e.target.value))}
+          />
+          <span> in:</span>
+          <label>
+            <input 
+              type='radio'
+              onChange={() => {setRadioButton("published_date")}}
+              checked={radioButton === "published_date"}
+            />Date
+          </label>
+          <label>
+            <input
+              type='radio'
+              onChange={() => {setRadioButton("title")}}
+              checked={radioButton === "title"}
+            />Title
+          </label>
+          <label>
+            <input
+              type='radio'
+              onChange={() => {setRadioButton("abstract")}}
+              checked={radioButton === "abstract"}
+            />Abstract
+          </label>
+          <label>
+            <input
+              type='radio'
+              onChange={() => {setRadioButton("byline")}}
+              checked={radioButton === "byline"}
+            />
+            {"Author(s)"}
+          </label>
+        </div>
         <table className='table-container'>
           <thead className='table-head-container'>
             <tr>
-              <th>Title</th>
-              <th>Abstract</th>
-              <th>Date Published</th>
-              <th>{"Author(s)"}</th>
+              <th className='date'>Date</th>
+              <th className='title'>Title</th>
+              <th className='abstract'>Abstract</th>
+              <th className='authors'>{"Author(s)"}</th>
             </tr>
           </thead>
-          <tbody className='table-body-container'>
-            {data !== null && data.results.map((result) => (
-              <tr>
-                <td className='table-body-title'>{result.title}</td>
-                <td className='table-body-abstract'>{result.abstract}</td>
-                <td className='table-body-authors'>{result.published_date.substring(0, 10)}</td>
-                <td className='table-body-authors'>{result.byline.slice(3).replace(" and", ",")}</td>
-              </tr>
-            ))}
+          <tbody>
+            {data !== null &&
+              data.results
+                .filter((result) => {
+                  const words = userInput.split(" OR ").map((w) => w.trim().toLowerCase());
+                  return words.some((word) =>
+                    result[radioButton]?.toLowerCase().includes(word)
+                  );
+                })
+                .map((result, index) => (
+                  <tr key={index}>
+                    <td className="date">{result.published_date.substring(0, 10)}</td>
+                    <td className="title">{result.title}</td>
+                    <td className="abstract">{result.abstract}</td>
+                    <td className="authors">{result.byline.slice(3).replace(" and", ",")}</td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>

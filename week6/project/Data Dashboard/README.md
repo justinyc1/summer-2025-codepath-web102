@@ -1,10 +1,10 @@
-# Web Development Project 5 - *Name of App Here*
+# Web Development Project 5 - *News Dashboard*
 
-Submitted by: **Your Name Here**
+Submitted by: **Justin Chen**
 
-This web app: **insert description**
+This web app: **Displays information for the top NYT articles, with filtering options.**
 
-Time spent: **2** hours spent in total
+Time spent: **7** hours spent in total
 
 ## Required Features
 
@@ -14,22 +14,23 @@ The following **required** functionality is completed:
   - The dashboard should display at least 10 unique items, one per row
   - The dashboard includes at least two features in each row
 - [x] **`useEffect` React hook and `async`/`await` are used**
-- [ ] **The app dashboard includes at least three summary statistics about the data** 
+- [x] **The app dashboard includes at least three summary statistics about the data** 
   - The app dashboard includes at least three summary statistics about the data, such as:
+    - The date and time of when the data was last updated
     - The number of stories (rows) displayed
     - The top 10 most frequently appearring words in titles
-- [ ] **A search bar allows the user to search for an item in the fetched data**
+- [x] **A search bar allows the user to search for an item in the fetched data**
   - The search bar **correctly** filters items in the list, only displaying items matching the search query
   - The list of results dynamically updates as the user types into the search bar
-- [ ] **An additional filter allows the user to restrict displayed items by specified categories**
+- [x] **An additional filter allows the user to restrict displayed items by specified categories**
   - The filter restricts items in the list using a **different attribute** than the search bar 
   - The filter **correctly** filters items in the list, only displaying items matching the filter attribute in the dashboard
   - The dashboard list dynamically updates as the user adjusts the filter
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types
   - e.g., as a text input, a dropdown or radio selection, and/or a slider
 - [ ] The user can enter specific bounds for filter values
 
@@ -41,14 +42,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='public/week6project.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with Ezgif
 
 ## Notes
 
