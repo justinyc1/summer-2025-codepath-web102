@@ -2,7 +2,7 @@
 
 Submitted by: **Justin Chen**
 
-This web app: **insert description**
+This web app: **News Dashboard, now with charts and the ability to view the details of each article.**
 
 Time spent: **7** hours spent in total
 
