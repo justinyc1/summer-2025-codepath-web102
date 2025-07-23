@@ -1,0 +1,80 @@
+#root {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  min-height: 100vh;
+}
+
+html, body, h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.detail-page-container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.detail-back-btn {
+  background-color: rgb(64, 64, 64);
+  color: white;
+  margin-top: 2%;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border-color: black;
+  font-size: 16px;
+}
+
+.detail-title {
+  & h1 {
+    margin: 2% auto;
+    font-size: 40px;
+  }
+  & h3 {
+    font-size: 24px;
+    width: 90%;
+    margin: 1% auto;
+  }
+  & span {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+  }
+}
+
+.detail-bottom-container {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  padding: 2% 0;
+
+  & .detail-image {
+    & img {
+      max-height: 500px;
+    }
+
+    & p {
+      max-width: 600px;
+    }
+  }
+}
+
+.detail-keywords li {
+  margin: 10px;
+  text-align: left;
+}
+
+.detail-footer {
+  padding-bottom: 50px;
+  & p {
+    font-size: 24px;
+    margin: 1% auto;
+    text-decoration: underline;
+  }
+
+  & a {
+    color: rgb(51, 153, 255);
+  }
+}

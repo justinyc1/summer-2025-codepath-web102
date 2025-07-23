@@ -1,0 +1,151 @@
+#root {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  min-height: 100vh;
+}
+
+html, body, h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-page-container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  & .header h1 {
+    padding-top: 5%;
+    padding-bottom: 2%;
+    font-size: 40px;
+  }
+
+  & .buttons-container {
+    margin: 10px 0px;
+  }
+
+  & .buttons-container span {
+    font-size: 20px;
+  }
+
+  & .btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 16px;
+    margin: 4px;
+    cursor: pointer;
+  }
+
+  & .btn.active {
+    background-color: rgb(100, 100, 100);
+    color: white;
+  }
+
+  & .content {
+    & .info-container {
+      display: flex;
+      justify-content: center;
+
+      & .info-middle {
+        width: 54%
+      }
+    }
+
+    & .freq {
+      margin: 30px;
+      font-weight: normal;
+      font-size: 20px;
+
+      & .head {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+      }
+
+      & .body-container {
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        & .words {
+        background-color: rgb(48, 48, 48);
+          margin: 4px;
+          padding: 8px 12px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+
+
+  & .filter-container {
+    font-size: 18px;
+
+    & input {
+      margin-bottom: 3%;
+    }
+  }
+
+  & .user-input {
+    margin: 6px;
+    font-size: 18px;
+  }
+
+  & label {
+    margin: 5px;
+  }
+
+  & table {
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 50px;
+  }
+
+  & th {
+    font-size: 20px;
+    text-decoration: underline;
+  }
+
+  & td {
+    font-size: 18px;
+  }
+
+  & th.date {
+    width: 8%;
+  }
+
+  & th.title {
+    width: 25%;
+  }
+
+  & th.abstract {
+    width: 52%;
+  }
+
+  & th.authors {
+    width: 15%;
+  }
+
+  & th, td {
+    padding: 15px;
+  }
+
+  & a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & p.title-tip {
+    font-size: 18px;
+    text-decoration: underline;
+  }
+}
