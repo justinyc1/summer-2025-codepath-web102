@@ -1,0 +1,13 @@
+.create-container {
+
+    & .selections-container {
+        display: flex;
+        justify-content: center;
+
+        & .name-container, .sus-container, .speed-container, .color-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            margin: 10px;
+        }
+    }
+}
