@@ -14,18 +14,22 @@ function CreateCrewmate() {
     const updateSelection = (event, attribute) => {
         switch (attribute) {
             case "name":
-                setSelections({...prevSelections, [attribute]: event.target.value})
+                setSelections(prevSelections => ({
+                    ...prevSelections, [attribute]: event.target.value
+                }))
                 break
             case "sus":
-
+                setSelections(prevSelections => ({
+                    ...prevSelections, [attribute]: !selections.sus 
+                }))
                 break
             case "speed":
-
-                break
-            case "color":
-
+                setSelections(prevSelections => ({
+                    ...prevSelections, [attribute]: event.target.value
+                }))
                 break
         }
+        console.log(selections);
     }
 
     return (
@@ -33,7 +37,7 @@ function CreateCrewmate() {
             <h1>Create a New Crewmate</h1>
             <div className='selections-container'>
                 <div className='name-container'>
-                    Name:
+                    <h3>Name:</h3>
                     <input 
                         type="text"
                         value={selections.name}
@@ -41,10 +45,17 @@ function CreateCrewmate() {
                     />
                 </div>
                 <div className='sus-container'>
-
+                    <h3>Impostor?</h3>
+                    <input
+                        className={selections.sus === true ? "is-sus" : "not-sus"}
+                        type="checkbox"
+                        checked={selections.sus}
+                        onChange={(event) => {updateSelection(event, "sus")}}
+                    />
+                    <span className={selections.sus === true ? "is-sus" : "not-sus"}>sus</span>
                 </div>
                 <div className='speed-container'>
-                    Speed {"(mph)"}:
+                    <h3>Speed {"(mph)"}:</h3>
                     <input 
                         type="text"
                         value={selections.speed}
@@ -52,7 +63,18 @@ function CreateCrewmate() {
                     />
                 </div>
                 <div className='color-container'>
-
+                    <h3>Pick a color:</h3>
+                    {colors.map((color) => (
+                        <div className='color-buttons'>
+                            <input 
+                                type="radio"
+                                color={color}
+                                checked={selections.color === color}
+                                onClick={() => {setSelections(prevSelections => ({...prevSelections, color: color}))}}
+                            />
+                            <span>{color}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

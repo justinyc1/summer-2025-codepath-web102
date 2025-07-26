@@ -1,13 +1,49 @@
 .create-container {
 
     & .selections-container {
-        display: flex;
-        justify-content: center;
+        display: ruby;
+        /* justify-content: center; */
 
         & .name-container, .sus-container, .speed-container, .color-container {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 25px;
             margin: 10px;
+            border-radius: 15px;
+
+            & h3 {
+                margin: 10px 0;
+            }
+        }
+
+        & .name-container {
+            & input {
+                width: 70%;
+            }
+        }
+
+        & .sus-container {
+            & input {
+                margin: 5px 10px;
+                accent-color: rgb(255, 25, 25);
+            }
+
+            & .is-sus {
+                color: rgb(255, 25, 25);
+            }
+        }
+
+        & .speed-container {
+            & input {
+                width: 70%;
+            }
+        }
+
+        & .color-buttons {
+            text-align: left;
+
+            & input {
+                margin: 5px 10px;
+            }
         }
     }
 }
