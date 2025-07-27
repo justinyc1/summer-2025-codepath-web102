@@ -1,0 +1,21 @@
+.gallery-container {
+
+    & .results-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        justify-content: center;
+        /* max-width: 1280px; */
+        max-width: calc(260px * 4 + gap * 3); /* for 4 columns */
+        margin: 0 auto;
+
+        & a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    & .result {
+        cursor: pointer;
+    }
+}

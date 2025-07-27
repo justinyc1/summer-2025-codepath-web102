@@ -1,0 +1,48 @@
+.card-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    
+    & .color-crewmate {
+        color: rgba(139,253,253,255);
+    }
+
+    & .color-impostor {
+        color: rgba(241,28,34,255);
+    }
+
+    & h2, h3, h4 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    & h2 {
+        font-size: 27px;
+    }
+
+    & img {
+        max-height: 10vh;
+        margin: 5px;
+    }
+}
+
+.detailed {
+    width: 320px;
+    margin: 0 auto;
+
+    & .color-impostor, .color-crewmate {
+        font-size: 50px;
+    }
+
+    & img {
+        max-height: 15vh;
+    }
+
+    & .name {
+        font-size: 40px;
+    }
+
+    & .speed {
+        font-size: 20px;
+    }
+}

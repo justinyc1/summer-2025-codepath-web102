@@ -1,0 +1,12 @@
+.detail-container {
+    & button {
+        margin-top: 20px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    & .delete {
+        background-color: red;
+    }
+}
