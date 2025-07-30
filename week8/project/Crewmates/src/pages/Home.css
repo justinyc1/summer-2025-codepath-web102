@@ -1,0 +1,29 @@
+.homepage-container {
+    & h3 {
+        font-family: 'In Your Face, Joffrey!';
+        font-size: 36px;
+    }
+
+    & .spin-container {
+        justify-content: none;
+        text-align: left;
+        overflow: hidden;
+        margin-top: 5%;
+
+        & .move-and-spin {
+            margin: 0px;
+            width: 100px;
+            position: relative; 
+            animation: moveAndSpin 4s linear infinite;
+        }
+    }
+}
+
+@keyframes moveAndSpin {
+    from {
+        transform: translateX(-100%) rotate(100deg);
+    }
+    to {
+        transform: translateX(100vw) rotate(820deg);
+    }
+}

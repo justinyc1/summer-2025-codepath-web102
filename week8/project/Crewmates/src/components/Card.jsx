@@ -11,8 +11,8 @@ const Card = (props) => {
               {sus === true ? "Impostor" : "Crewmate"}
           </h2>
           <img src={`/crewmates/${color}.webp`}/>
-          <h2 className="name">{name}</h2>
-          <h4 className="speed">{speed + " mph"}</h4>
+          <h2 className="name">{name === null || name === "" ? "unknown" : name}</h2>
+          <h4 className="speed">{speed === null ? "speed unknown" : speed + " mph"}</h4>
       </div>
     )
   } else {

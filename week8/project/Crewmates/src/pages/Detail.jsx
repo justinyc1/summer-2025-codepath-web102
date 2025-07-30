@@ -16,7 +16,7 @@ function Detail() {
         if (error) {
             console.log("insert error: " + error);
         } else {
-            console.log("insert success");
+            console.log("insert success: " + data);
         }
         navigate("/gallery")
     }

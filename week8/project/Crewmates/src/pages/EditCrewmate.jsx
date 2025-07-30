@@ -23,7 +23,7 @@ function EditCrewmate() {
         if (error) {
             console.log("insert error: " + error);
         } else {
-            console.log("insert success");
+            console.log("insert success: " + data);
         }
         const {name, sus, speed, color} = formData
         console.log(name, sus, speed, color)

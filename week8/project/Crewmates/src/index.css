@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   background-color: rgb(24, 24, 24);
+  background-image: url("/bg.jpg");
   text-align: center;
   font-family: sans-serif;
 }

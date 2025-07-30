@@ -15,6 +15,12 @@ function Gallery() {
                 .select()
                 .order('created_at', { ascending: false })
 
+            if (error) {
+                console.log("insert error: " + error);
+            } else {
+                console.log("insert success: " + data);
+            }
+
             setCrewmates(data)
         }
         fetchAllCrewmates()

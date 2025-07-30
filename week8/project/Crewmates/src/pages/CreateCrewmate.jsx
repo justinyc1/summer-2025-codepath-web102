@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router'
 function CreateCrewmate() {
     const navigate = useNavigate()
     const initialValues = {
-        name: "",
+        name: null,
         sus: false,
-        speed: "",
-        color: ""
+        speed: null,
+        color: "red"
     }
 
     const handleFormSubmit = async (formData) => {
@@ -20,7 +20,7 @@ function CreateCrewmate() {
         if (error) {
             console.log("insert error: " + error);
         } else {
-            console.log("insert success");
+            console.log("insert success: " + data);
         }
 
         navigate("/gallery")
