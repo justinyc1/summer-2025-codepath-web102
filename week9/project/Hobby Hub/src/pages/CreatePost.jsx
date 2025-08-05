@@ -1,7 +1,7 @@
-import './CreatePost.css'
-import { supabase } from '../supabaseClient.js'
-import PostForm from '../components/PostForm.jsx'
 import { useNavigate } from 'react-router'
+import { supabase } from '../supabaseClient.js'
+import './CreatePost.css'
+import PostForm from '../components/PostForm.jsx'
 
 // allows creation of a post
 function CreatePost() {
@@ -17,7 +17,7 @@ function CreatePost() {
         const { data, error } = await supabase
             .from("posts")
             .insert([formData])
-            .select()
+            .select("id", "created_at", "title", "description", "image_url", "map_link") // DEBUG TODO: try to nav to post/:id instead of explore
         if (error) {
             console.log("insert error: " + error);
         } else {
