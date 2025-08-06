@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router";
 import "./Explore.css"
-import { supabase } from "../supabaseClient"
+import { supabase } from "../supabaseClient.js"
 import Card from "../components/Card";
 
 // displays all posts
@@ -18,14 +18,14 @@ function Explore() {
         const fetchAllPosts = async () => {
             const { data, error } = await supabase
                 .from("posts")
-                // .select('id, created_at, name, sus, speed, color')
                 .select()
                 .order('created_at', { ascending: false })
 
             if (error) {
-                console.log("insert error: " + error);
+                console.log("fetch posts error: " + error);
             } else {
-                console.log("insert success: " + data);
+                console.log("fetch posts success!");
+                // console.log("fetch posts success: " + data);
             }
 
             setPosts(data)
@@ -37,18 +37,15 @@ function Explore() {
         <div className="explore-container">
             <h1 className="page-title">Explore Spots</h1>
             <div className="results-container">
-                {posts === null ? "Loading..." : posts.map(({createdAt, title, upvotes, id}) => (
+                {posts === null ? "Loading..." : posts.map(({title, description, image_url, map_link, upvotes, created_at, id}) => (
                     <Link 
-                        to={`/details/${id}`}
+                        to={`/post/${id}`}
                         className="result"
                         key={id}
-                        state={{ createdAt, title, upvotes, id }}
+                        state={{ title, description, image_url, map_link, upvotes, created_at, id }}
                     >
                         <Card
                             detailed={false}
-                            createdAt={createdAt}
-                            title={title}
-                            upvotes={upvotes}
                             id={id}
                         />
                     </Link>

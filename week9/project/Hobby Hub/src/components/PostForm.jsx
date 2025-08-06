@@ -11,8 +11,8 @@ function PostForm({ initialValues, submitButtonText, onSubmit }) {
     const [inputErrors, setInputErrors] = useState({
         title: null,
         description: null,
-        imageUrl: null,
-        mapLink: null
+        image_url: null,
+        map_link: null
     });
 
     const handleChange = (event, attribute) => {
@@ -24,7 +24,7 @@ function PostForm({ initialValues, submitButtonText, onSubmit }) {
                 ...prev, title: null
             }))
         }
-        console.log(inputErrors); // DEBUG: empty title submit -> type something and delete -> submit but it goes through when shouldnt
+        // console.log(inputErrors); // DEBUG: empty title submit -> type something and delete -> submit but it goes through when shouldnt
     }
 
     const handleSubmit = (e) => {
@@ -45,7 +45,7 @@ function PostForm({ initialValues, submitButtonText, onSubmit }) {
                 <input 
                     className={inputErrors.title ? "input-error" : ""}
                     type="text"
-                    value={selections.title}
+                    value={selections.title || ''}
                     placeholder={inputErrors.title ? inputErrors.title : "Enter name..."}
                     onChange={(event) => {handleChange(event, "title")}}
                 />
@@ -53,23 +53,23 @@ function PostForm({ initialValues, submitButtonText, onSubmit }) {
                 <h3>Description:</h3>
                 <input 
                     type="text"
-                    value={selections.description}
+                    value={selections.description || ''}
                     placeholder="Enter description..."
                     onChange={(event) => {handleChange(event, "description")}}
                 />
                 <h3>Image Url:</h3>
                 <input 
                     type="url"
-                    value={selections.imageUrl}
+                    value={selections.image_url || ''}
                     placeholder="Enter Image Url..."
-                    onChange={(event) => {handleChange(event, "imageUrl")}}
+                    onChange={(event) => {handleChange(event, "image_url")}}
                 />
                 <h3>Map Link:</h3>
                 <input 
                     type="url"
-                    value={selections.mapLink}
+                    value={selections.map_link || ''}
                     placeholder="Enter a maps link..."
-                    onChange={(event) => {handleChange(event, "mapLink")}}
+                    onChange={(event) => {handleChange(event, "map_link")}}
                 />
             </div>
             <button type="submit">{submitButtonText}</button>

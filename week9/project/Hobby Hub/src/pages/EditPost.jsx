@@ -7,12 +7,12 @@ import './EditPost.css'
 function EditPost() {
     const navigate = useNavigate();
     const location = useLocation();
-    const { title, description, imageUrl, mapLink, id } = location.state;
+    const { title, description, image_url, map_link, id } = location.state;
     const initialValues = {
         title: title,
         description: description,
-        imageUrl: imageUrl,
-        mapLink: mapLink
+        image_url: image_url,
+        map_link: map_link
     }   
 
     const handleFormSubmit = async (formData) => {
@@ -26,17 +26,17 @@ function EditPost() {
         } else {
             console.log("insert success: " + data);
         }
-        const {title, description, imageUrl, mapLink} = formData
-        console.log(title, description, imageUrl, mapLink)
-        navigate(`/details/${id}`, {state: {title, description, imageUrl, mapLink, id}})
+        const {title, description, image_url, map_link} = formData
+        console.log(title, description, image_url, map_link)
+        navigate(`/post/${id}`, {state: {title, description, image_url, map_link, id}})
     }
 
     return (
         <div className='edit-container'>
-            <h1 className='page-title'>Edit Crewmate</h1>
+            <h1 className='page-title'>Edit Post</h1>
             <PostForm
                 initialValues={initialValues}
-                submitButtonText={"Edit Crewmate!"}
+                submitButtonText={"Apply Edits"}
                 onSubmit={handleFormSubmit}
             />
         </div>

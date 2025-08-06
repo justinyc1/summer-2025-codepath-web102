@@ -2,11 +2,11 @@
 
     & .results-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 15px;
         justify-content: center;
         /* max-width: 1280px; */
-        max-width: calc(260px * 4 + gap * 3); /* for 4 columns */
+        max-width: calc(480px * 4 + gap * 3); /* for 4 columns */
         margin: 0 auto;
 
         & a {

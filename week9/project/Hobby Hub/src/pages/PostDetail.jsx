@@ -1,18 +1,18 @@
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import "./PostDetail.css"
 import Card from "../components/Card";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient.js";
 
 // view specific posts using Card
 // allows edit or deletion of the post
 function PostDetail() {
     const navigate = useNavigate();
     const location = useLocation();
-    const { title, description, imageUrl, mapLink, id } = location.state;
+    const { title, description, image_url, map_link, upvotes, created_at, id } = location.state;
 
     const deletePost = async () => {
         const { data, error } = await supabase
-            .from("crewmates")
+            .from("posts")
             .delete()
             .eq("id", id)
         if (error) {
@@ -30,13 +30,16 @@ function PostDetail() {
                 detailed={true}
                 title={title}
                 description={description}
-                imageUrl={imageUrl}
-                mapLink={mapLink}
+                image_url={image_url}
+                map_link={map_link}
+                upvotes={upvotes}
+                created_at={created_at}
+                id={id}
             />
             <Link 
-                to="/edit" 
+                to={`/edit/${id}`} 
                 className="button-link"
-                state={{ title, description, imageUrl, mapLink, id }}
+                state={{ title, description, image_url, map_link, id }}
             >
                 <button>
                     Edit Post

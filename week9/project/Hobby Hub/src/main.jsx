@@ -10,16 +10,16 @@ import EditPost from './pages/EditPost.jsx'
 import PostDetail from './pages/PostDetail.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" index element={<Home />}/>
-        <Route path="/explore" index element={<Explore />}/>
-        <Route path="/create" element={<CreatePost />}/>
-        <Route path="/edit/:id" element={<EditPost />}/>
-        <Route path="/post/:id" element={<PostDetail />}/>
-      </Routes>
-    </BrowserRouter>
-  </StrictMode>,
+	<StrictMode>
+		<BrowserRouter>
+		<Navbar />
+		<Routes>
+			<Route path="/" index element={<Home />}/>
+			<Route path="/explore" index element={<Explore />}/>
+			<Route path="/create" element={<CreatePost />}/>
+			<Route path="/edit/:id" element={<EditPost />}/>
+			<Route path="/post/:id" element={<PostDetail />}/>
+		</Routes>
+		</BrowserRouter>
+	</StrictMode>,
 )

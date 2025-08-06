@@ -9,15 +9,15 @@ function CreatePost() {
     const initialValues = {
         title: null,
         description: null,
-        imageUrl: null,
-        mapLink: null
+        image_url: null,
+        map_link: null
     }
 
     const handleFormSubmit = async (formData) => {
         const { data, error } = await supabase
             .from("posts")
             .insert([formData])
-            .select("id", "created_at", "title", "description", "image_url", "map_link") // DEBUG TODO: try to nav to post/:id instead of explore
+            // .select("id", "created_at", "title", "description", "image_url", "map_link") // DEBUG TODO: try to nav to post/:id instead of explore
         if (error) {
             console.log("insert error: " + error);
         } else {

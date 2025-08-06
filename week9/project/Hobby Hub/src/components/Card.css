@@ -12,29 +12,67 @@
         font-size: 27px;
     }
 
-    & img {
-        max-height: 10vh;
-        margin: 5px;
+    & .upvotes-left-container {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        justify-content: center;
+        
+        & img {
+            max-width: 32px;
+            cursor: pointer;
+        }
+    } 
+
+    .shrink-pop {
+        display: inline-block;
+        transition: transform 0.15s ease;
+        cursor: pointer;
+    }
+
+    .shrink-pop:active {
+        transform: scale(0.9);
     }
 }
 
 .detailed {
-    width: 320px;
+    width: 840px;
     margin: 0 auto;
+    padding: 25px;
+    text-align: left;
 
-    & .color-impostor, .color-crewmate {
-        font-size: 50px;
+    & .title-container {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+
+        & h2 {
+            font-size: 36px;
+        }
     }
 
-    & img {
-        max-height: 15vh;
+    & p {
+        margin: 8px;
     }
 
-    & .name {
-        font-size: 40px;
+    & .url-image {
+        max-height: 30vh;
+        margin: 8px;
     }
 
-    & .speed {
-        font-size: 20px;
+    & .map-link {
+        margin: 8px;
+        font-weight: normal;
+    }
+
+    & .upvotes-container {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        & img {
+            max-width: 32px;
+            cursor: pointer;
+        }
     }
 }
