@@ -39,7 +39,7 @@ if (detailed) {
         <div className="upvotes-container">
             <img 
                 onClick={incrementUpvotes}
-                // src={} // TODO; update CSS
+                src={"/vite.svg"} // TODO; update img & CSS
             />
             Upvotes
         </div>

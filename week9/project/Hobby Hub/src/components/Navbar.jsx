@@ -16,7 +16,7 @@ export default function Navbar() {
             <NavLink
                 to={"/"}
             >
-                ListMySpot
+                PostMySpot
             </NavLink>
         </div>
         <div className="navlink-container">

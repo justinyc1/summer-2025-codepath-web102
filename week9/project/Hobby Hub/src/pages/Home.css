@@ -1,6 +1,11 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
+.homepage-container {
+  & .nav-buttons-container {
+    & button {
+      margin: 16px;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+    
+  }
+}
