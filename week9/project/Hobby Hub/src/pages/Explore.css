@@ -1,12 +1,18 @@
 .explore-container {
+    & .filter-container {
+        margin-bottom: 3vh;
+
+        & .filter-gap {
+            padding-left: 3vw;
+        }
+    }
 
     & .results-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 15px;
         justify-content: center;
-        /* max-width: 1280px; */
-        max-width: calc(480px * 4 + gap * 3); /* for 4 columns */
+        max-width: 1280px;
         margin: 0 auto;
 
         & a {
